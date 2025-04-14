@@ -2,12 +2,14 @@
 import{ Car } from './js/Car.js';
 
 
-const volvo = new Car('Volvo S40', 'red', 55);
-const zapas = new Car('Zapas', 'white', 35);
+const volvo = new Car('Volvo S40', 'red', 55, 30, true,5, 200);
+const zapas = new Car('Zapas', 'white', 35, 20, false, 10, 280);
 console.log(volvo.intro());
 console.log(zapas.intro());
-zapas.refill(20);
-console.log(zapas);
+console.log(zapas.startEngine());
+console.log(zapas.drive(200));
+
+
 
 
 
