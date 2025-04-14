@@ -1,9 +1,11 @@
 {
   "name": "55-grupe-oop",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "oop": "node --watch ./index.js",
+    "auto": "node --watch ./auto.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
