@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "oop": "node --watch ./index.js",
+    "animals": "node --watch ./animals.js",
     "auto": "node --watch ./auto.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

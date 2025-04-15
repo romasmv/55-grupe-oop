@@ -12,7 +12,7 @@ refill() - uzpilti degalu, bet ne daugiau, nei telpa ir jei variklis yra isjungt
 
 
 export class Car {
-    constructor(model, color, tankMax ,tank, engineIsOn, carConsumption) {
+    constructor(model, color, tankMax ,tank, engineIsOn, carConsumption) { //carConsumption - sanaudos
         this.model = model;
         this.color = color;
         this.tankMax = tankMax;
@@ -44,23 +44,23 @@ export class Car {
     }
     startEngine() {
         if (this.tank === 0) {
-            return `Error: the tank is empty`;
+            return `Tank is empty`;
         }
         this.engineIsOn = true;
         return `Engine started`;
     }
     
     stopEngine() {
-        if (!this.engineIsOn) {
-            return `Error: the engine is already off`;
+        if (!this.engineIsOn === false) {  
+            return `Engine is already off`;
         }
-        this.engineIsOn = false;
+        this.engineIsOn = false;  
         return `Engine stopped`;
     }
     
     drive(km) {
         if (this.engineIsOn === false) {
-            return `The engine is switchoff`;
+            return `The engine is switch off`;
         }
         if (this.tank <= 0) {
             return `Tank is empty`;
