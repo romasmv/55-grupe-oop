@@ -2,16 +2,16 @@
   "name": "55-grupe-oop",
   "version": "1.0.0",
   "type": "module",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "static": "node --watch ./static.js",
-    "animals": "node --watch ./animals.js",
-    "auto": "node --watch ./auto.js",
-    "oop": "node --watch ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "static": "node --watch ./static.js",
+      "animals": "node --watch ./animals.js",
+      "auto": "node --watch ./auto.js",
+      "oop": "node --watch ./index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Romas (https://github.com/romasmv)",
-  "license": "ISC",
-  "description": "BIT"
+  "author": "Rimantas (https://github.com/belauzas)",
+  "license": "MIT"
 }
