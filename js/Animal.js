@@ -4,6 +4,6 @@ export class Animal {
     }
 
     hi() {
-        return `Hi, my name is ${this.name}.`;
+        return `Hi, my name is ${this.name}.`;  
     }
-}
+} 

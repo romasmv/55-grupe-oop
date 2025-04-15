@@ -7,7 +7,7 @@ export class Bird extends Animal {
         this.legsCount = 2;
         this.wingsCount = 2;
         this.sound = 'au miau krimst';
-        this.emoji = '🐕🐈🐹';
+        this.emoji = '🦅🐲🦜';
     }
 
     voice() {
@@ -16,4 +16,4 @@ export class Bird extends Animal {
         return `${this.name}:${sound} ${emojies}!`;
     }
 
-}
+}   
