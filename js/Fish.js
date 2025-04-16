@@ -5,7 +5,7 @@ export class Fish extends Animal {
         super(name);
         this.livesIn = 'ocean';
         this.eating = 'fish and squid';
-        this.byDietType = 'carnivore';
+        this.byDietType = 'carnivore'; // carnivore -mesaede
     }
 
 }
