@@ -60,9 +60,6 @@ import { Eagle } from "./js/Eagle.js";
 import { Parrot } from "./js/Parrot.js";
 import { Humingbird } from "./js/Humingbird.js";
 
-
-
-
 const rainis = new Cat('Rainis', 'mixed');
 const rex = new Dog('Rex', 'black');
 const keksas = new Hamster('Keksas', 'brown');
@@ -82,7 +79,7 @@ console.log('-------------------------');
 console.log(lydeka);
 console.log(lydeka.grantWish('lots of cash'));
 console.log(antanas.hi());
-console.log(delfinas);
+console.log(delfinas. hi());
 console.log(tunas.hi());
 console.log(erelis.hi());
 console.log(papuga.hi());

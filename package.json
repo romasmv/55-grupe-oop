@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+      "codewars": "node --watch ./codewars.js",
       "static": "node --watch ./static.js",
+      "zooGabijos": "node --watch ./zooGabijos.js",
       "animals": "node --watch ./animals.js",
       "auto": "node --watch ./auto.js",
       "oop": "node --watch ./index.js",
