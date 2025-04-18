@@ -10,10 +10,14 @@ class animal{
         this.legCount = 0;
         this.isHungry = true;
         this.species = "unknown";
+        this.sound = '';
+        this.emoji = '';
+        this.energija = 40;
     }
     
     feed(food) //liutas nori mesos, pingvinas nori zuvies, flamingas nori krevečiu
     {
+       
         if(this.isHungry===true && this.wantedFood === food)
         {
             this.isHungry=false;
@@ -29,7 +33,27 @@ class animal{
         }
             
     }
+    hi() {
+        if(this.energija >= 5){
+            this.energija -= 5;
+    return `Hi, my name is ${this.name}.`;  
+        }
+        else {
+        `${this.name} yra pavargęs ir negali pasakyti savo vardo `
+        }
+    }
+    voice() {
+        const sound = (' ' + this.sound);
+        const emojies = this.emoji;
+        return `${this.name}:${sound} ${emojies}!`;
+    }
+
 }
+
+
+
+
+
 
 class Lion extends animal{
     constructor(name, age)
@@ -38,6 +62,8 @@ class Lion extends animal{
         this.legCount = 4;
         this.species = "liutas";
         this.wantedFood = "meat"
+        this.sound = 'roar!';
+        this.emoji = '🦁';
     }
 }
 
@@ -51,7 +77,24 @@ class Penguin extends animal{
         this.isHungry = false;
         this.species = "pingvinas";
         this.wantedFood = "fish";
+        this.sound = 'honk honk :)';
+        this.emoji = '🐧';
     }
+    triukas(a){
+ if(this.energija >= 10){
+    this.energija -= 10;
+        if (a ==='hi'|| a==='hello'|| a==='labas') {
+            return `Labas, mano vardas ${this.name}`
+         }
+       
+        else{
+          return `${this.name} paplojo ir pamojavo. `
+        }
+    }
+
+   return  `${this.name} yra pavargęs ir negali atlikti triuko `
+
+}
 
 }
 
@@ -66,25 +109,27 @@ class Flamingo extends animal{
         this.isHungry = false;
         this.species = "flamingas";
         this.wantedFood = "shrimp";
+        this.sound = 'Huh-huh-huh';
+        this.emoji = '🦩';
     }
 
 }
 
 const simba = new Lion("Simba", 4)
-console.log(simba.name);
-console.log(simba.isHungry);
-console.log(simba.feed("meat"));
-console.log(simba.isHungry);
-console.log(simba.feed());
+//console.log(simba.name);
+//console.log(simba.isHungry);
+//console.log(simba.feed("meat"));
+//console.log(simba.isHungry);
+//console.log(simba.feed());
 
 const kowalski = new Penguin("Kowalski", 10)
-console.log(kowalski.legCount)
+//console.log(kowalski.legCount)
 
 
 const zoo = [kowalski, simba, new Lion("Puma", 8), new Penguin("Rico", 3), new Flamingo("Richard", 6)]
 
-console.log("-------------------")
-//console.log(zoo)
+//console.log("-------------------")
+
 
 function oldestAnimal(animals)
 {
@@ -102,7 +147,7 @@ function oldestAnimal(animals)
     return animal;
 }
 
-console.log(oldestAnimal(zoo))
+//console.log(oldestAnimal(zoo))
 
 function collectBirds(animals)
 {
@@ -118,7 +163,7 @@ function collectBirds(animals)
     return birds
 }
 
-console.log(collectBirds(zoo))
+//console.log(collectBirds(zoo))
 
 
 /*
@@ -146,3 +191,189 @@ function collectBirds(animals) {
     return birds;
 }
 */
+
+class Monkey extends animal{
+    constructor(name, age)
+    {
+        super(name, age)
+        this.legCount = 2;
+        this.armsCount = 2;
+        this.species = "bezdzione";
+        this.wantedFood = "banana"
+        this.sound = 'Ooh ooh aah aah';
+        this.emoji = '🙉';
+    }
+    triukas(a,b){
+        if(this.energija >= 10){
+            this.energija -= 10;
+            if (a<5&&b<5){
+                return `${this.name} parodė ${a+b} pirštus`
+              }
+              else {
+                 return `${this.name} mete saują purvo`
+              }  
+        }
+      
+     return   `${this.name} yra pavargęs ir negali atlikti triuko `
+    
+
+       }
+}
+
+const bezdzione = new Monkey ('Bezdzione',5)
+
+class Elephant extends animal{
+
+    constructor(name, age)
+    {
+        super(name, age)
+        this.legCount = 4;
+        this.isHungry = false;
+        this.species = "dramblys";
+        this.wantedFood = "fruit,leavers from trees";
+        this.sound = 'Pawoo';
+        this.emoji = '🐘';
+        this.energija = 40;
+    }
+
+    triukas(a) {
+        if (this.energija >= 10) {
+            this.energija -= 10;
+            if (a === 'sauleta') {
+                return `${this.name} papurkškia vandenį ir padaro vaivorykštę 🌈.`;
+            } else if (a === 'debesuota') {
+                return `${this.name} tiesiog purškia vandenį 🐘💧.`;
+            } else if (a === 'salta') {
+                return `${this.name} tave aplaiste 🥶.`;
+            } else {
+                return `${this.name} nežino, ką daryti su sąlyga '${a}'.`;
+            }
+        } else {
+            return `${this.name} yra pavargęs ir negali atlikti triuko.`;
+        }
+    }
+}
+
+const dramblys = new Elephant ('Dramblys',15)
+
+zoo.push(dramblys,bezdzione)
+
+//console.log(dramblys.triukas('sauleta'));
+//console.log(kowalski.triukas('hi'));
+
+
+console.log(bezdzione.hi());
+console.log(bezdzione.triukas(5,2));
+console.log(bezdzione.triukas(5,2));
+console.log(bezdzione.triukas(5,2));
+console.log(bezdzione.triukas(5,2));
+
+
+
+
+
+
+console.log(bezdzione.energija);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
