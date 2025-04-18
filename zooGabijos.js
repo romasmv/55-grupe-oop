@@ -59,7 +59,7 @@ class animal{
     }
     HappyBirthday(){
     this.age += 1;
-    return `Su Gimtadieniu ${this.name}, dabar tau ${this.age} metu, tavo tortas is ${this.wantedFood} paruostas!`;
+    return `Su Gimtadieniu ${this.name}, dabar tau ${this.age}, tavo tortas is ${this.wantedFood} paruostas!`;
     }
 }
 
@@ -243,7 +243,7 @@ class Elephant extends animal{
         this.legCount = 4;
         this.isHungry = false;
         this.species = "dramblys";
-        this.wantedFood = "fruit,leavers from trees";
+        this.wantedFood = "fruits";
         this.sound = 'Pawoo';
         this.emoji = '🐘';
         this.energija = 40;
@@ -282,6 +282,7 @@ console.log(bezdzione.feed("banana"));
 
 console.log(bezdzione.sleep());
 console.log(bezdzione.energija);
+console.log(simba.HappyBirthday());
 
 
 
