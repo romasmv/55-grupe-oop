@@ -16,9 +16,13 @@ class animal{
     }
     
     feed(food) //liutas nori mesos, pingvinas nori zuvies, flamingas nori krevečiu
-    {
-       
-        if(this.isHungry===true && this.wantedFood === food)
+        {    
+         if (this.energija<40){
+        this.energija +=10;
+        this.energija = Math.min(this.energija + 10, 40);
+    }
+
+       if(this.isHungry===true && this.wantedFood === food)
         {
             this.isHungry=false;
             return "Ačiū už pietus"
@@ -47,7 +51,16 @@ class animal{
         const emojies = this.emoji;
         return `${this.name}:${sound} ${emojies}!`;
     }
+    sleep(){
+        this.energija += 20;
+        this.energija = Math.min(this.energija + 10, 40);
 
+        return `${this.name} miega`;
+    }
+    HappyBirthday(){
+    this.age += 1;
+    return `Su Gimtadieniu ${this.name}, dabar tau ${this.age} metu, tavo tortas is ${this.wantedFood} paruostas!`;
+    }
 }
 
 
@@ -92,7 +105,7 @@ class Penguin extends animal{
         }
     }
 
-   return  `${this.name} yra pavargęs ir negali atlikti triuko `
+   return  `${this.name} yra pavargęs ir negali atlikti triuko, reikia pavalgyti arba pamiegoti kad atgauti jiegas`
 
 }
 
@@ -214,7 +227,7 @@ class Monkey extends animal{
               }  
         }
       
-     return   `${this.name} yra pavargęs ir negali atlikti triuko `
+     return   `${this.name} yra pavargęs ir negali atlikti triuko, reikia pavalgyti arba pamiegoti kad atgauti jiegas `
     
 
        }
@@ -249,7 +262,7 @@ class Elephant extends animal{
                 return `${this.name} nežino, ką daryti su sąlyga '${a}'.`;
             }
         } else {
-            return `${this.name} yra pavargęs ir negali atlikti triuko.`;
+            return `${this.name} yra pavargęs ir negali atlikti triuko, reikia pavalgyti arba pamiegoti kad atgauti jiegas`;
         }
     }
 }
@@ -263,18 +276,12 @@ zoo.push(dramblys,bezdzione)
 
 
 console.log(bezdzione.hi());
-console.log(bezdzione.triukas(5,2));
-console.log(bezdzione.triukas(5,2));
-console.log(bezdzione.triukas(5,2));
-console.log(bezdzione.triukas(5,2));
+console.log(bezdzione.triukas(2,3));
 
+console.log(bezdzione.feed("banana"));
 
-
-
-
-
+console.log(bezdzione.sleep());
 console.log(bezdzione.energija);
-
 
 
 
